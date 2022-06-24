@@ -44,7 +44,7 @@ class MaintenanceMonitorTest {
             ResponseEntity r = k.upTimePercentage();
             String body = r.getBody().toString();
 
-            assertEquals(body, "{\"uptime\":\"50,00\",\"message\":\"test msg\"}");
+            assertEquals(body, "{\"uptime\":\"50.00\",\"message\":\"test msg\"}");
         }
         catch (Exception a) {}
     }
