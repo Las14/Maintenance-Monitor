@@ -4,12 +4,12 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class UpdateStatusTest {
+class MaintenanceMonitorTest {
 
     @Test
 
     void UpdateTest (){
-        UpdateStatus k = new UpdateStatus();
+        Main k = new Main();
         double time = 1.0;
         String text = "test msg";
 

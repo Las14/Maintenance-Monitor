@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-public class UpdateStatus {
+public class Main {
 
     String currentMessage = "No Errors Found.";
     Double currentUptime = 100.0;
@@ -16,6 +16,7 @@ public class UpdateStatus {
         currentMessage = message;
         return "OK";
     }
+
 
 
 
