@@ -1,5 +1,9 @@
 package com.example.maintenancemonitor;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -28,6 +32,16 @@ public class Main {
         currentUptime = 100.0;
         currentMessage = originalMessage;
         return "OK";
+    }
+
+    @RequestMapping("/upTimePercentage")
+    @CrossOrigin()
+    public ResponseEntity<JsonNode> upTimePercentage() throws JsonProcessingException {
+        ObjectMapper mapper = new ObjectMapper();
+        String response = String.format("{\"uptime\": \"%.2f\", \"message\": \"%s\"}", currentUptime, currentMessage);
+        JsonNode json = mapper.readTree(response);
+        ResponseEntity res = ResponseEntity.ok(json);
+        return res;
     }
 
 
