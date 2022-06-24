@@ -1,6 +1,7 @@
 package com.example.maintenancemonitor;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.http.ResponseEntity;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -31,6 +32,21 @@ class MaintenanceMonitorTest {
 
         assertEquals(k.currentMessage, text);
         assertEquals(k.currentUptime, time);
+    }
+
+    @Test
+    void upTimePercentageTest(){
+        try
+        {
+            k.currentUptime = 50.00;
+            k.currentMessage = "test msg";
+
+            ResponseEntity r = k.upTimePercentage();
+            String body = r.getBody().toString();
+
+            assertEquals(body, "{\"uptime\":\"50,00\",\"message\":\"test msg\"}");
+        }
+        catch (Exception a) {}
     }
 
 }
