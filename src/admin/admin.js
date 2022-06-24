@@ -12,3 +12,13 @@ function setData() {
         $('.status').append("Updated!");
     });
 }
+
+function resetData() {
+    $.ajax({
+        url: "http://localhost:8092/resetStatus",
+        type: "GET",
+    }).then(function(data) {
+        $('.status').empty();
+        $('.status').append("Reset!");
+    });
+}
