@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Maintenance Monitor</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="admin.js"></script>
+</head>
+<body>
+<form class="main">
+    <label for="uptime">Uptime in %:</label><br>
+    <input type="text" id="uptime" name="uptime"><br><br>
+    <label for="message">Message:</label><br>
+    <textarea type="textarea" id="message" name="message"></textarea><br><br>
+    <button id="set" type="button" onclick="setData()">Set</button>
+</form>
+<div class="status"></div>
+</body>
+</html>
